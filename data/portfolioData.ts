@@ -7,6 +7,8 @@ export const personalInfo = {
   role: "Full Stack Developer | Software Developer",
   location: "Bandung, Indonesia",
   email: "panggabeaneta@gmail.com",
+  instagram: "https://www.instagram.com/yefta_panggabean",
+  whatsapp: "+62 822-7882-7021",
   tagline: "Building scalable, efficient, and user-centric software solutions from Indonesia to the world.",
   summary: "A passionate Software Engineer with a strong foundation in both Frontend and Backend development. With a 3.91 GPA in Information Technology, I combine academic excellence with practical experience in frameworks like Laravel and React. I specialize in building robust web applications and solving complex architectural challenges.",
 };
