@@ -20,7 +20,7 @@ export const education = {
 export const skills: SkillGroup[] = [
   {
     category: "Frontend",
-    items: ["React.js", "Tailwind CSS", "Bootstrap", "JavaScript (ES6+)", "HTML5", "CSS3"]
+    items: ["React.js", "Vue.js", "Tailwind", "Bootstrap", "CSS", "JavaScript", "HTML5",]
   },
   {
     category: "Backend",
@@ -76,11 +76,11 @@ export const projects: Project[] = [
     image: "src/images/YBFTAcademy.png"
   },
   {
-    title: "Academic Portal",
-    description: "A secure student portal for managing course enrollments, grade viewing, and academic scheduling.",
-    tech: ["Laravel", "Bootstrap", "PostgreSQL"],
-    githubUrl: "https://github.com/yeftafebrianto",
-    image: "https://picsum.photos/seed/portal/800/600"
+    title: "GarageTI Workshop",
+    description: "project in the web 2 course, developing a car repair system.",
+    tech: ["Laravel", "Vue.JS", "Bootstrap", "MySQL","CSS"],
+    githubUrl: "https://github.com/YeftaPanggabean13/GarageTI",
+    image: "src/images/garageti.png"
   }
 ];
 
