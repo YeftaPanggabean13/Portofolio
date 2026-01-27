@@ -1,5 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
+import Button from '../components/Button';
 
 const Hero: React.FC = () => {
   return (
@@ -39,22 +40,31 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mt-2">
-              <a
+              <Button
+                asLink
                 href="#projects"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-all"
+                size="lg"
+                icon={
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                }
               >
                 View Work
-              </a>
+              </Button>
 
-              <a
+              <Button 
+                asLink
                 href="/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-lg border border-slate-800 transition-all"
+                external
+                variant="secondary"
+                size="lg"
               >
                 Download CV
-              </a>
+              </Button>
             </div>
+
 
             <div className="flex items-center gap-5 mt-6">
               <a
