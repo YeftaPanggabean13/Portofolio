@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                 <img
                   src={personalInfo.image}
                   alt={personalInfo.name}
-                  className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-[1.5rem] grayscale-20 hover:grayscale-0 transition-all duration-700"
+                  className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-[1.5rem] grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                 />
               </div>
             </div>
@@ -25,20 +25,11 @@ const Hero: React.FC = () => {
 
           {/* CONTENT */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            
-            {/* Status Badge
-            <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-400/90">
-                Available for work
-              </span>
-            </div> */}
-
             {/* Typography Update: Text Gradient & Tight Tracking */}
             <div className="mb-8">
               <h1 className="text-4xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.05] text-white">
                 Serious about <span className="text-slate-500">software,</span> <br />
-                Curious about <span className="bg-linear-to-br from-blue-400 to-indigo-500 bg-clip-text text-transparent">everything.</span>
+                Curious about <span className="bg-gradient-to-br from-blue-400 to-indigo-500 bg-clip-text text-transparent">everything.</span>
               </h1>
             </div>
             
@@ -46,10 +37,10 @@ const Hero: React.FC = () => {
               <Button
                 asLink
                 href="#projects"
-                size="lg"
-                className="rounded-full bg-white text-black hover:bg-slate-200 px-8 shadow-xl transition-all"
-                icon={
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                // Ukuran dikecilkan, font dibuat lebih bold & rapat
+              className="rounded-full border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-md px-6 py-2.5 text-sm font-bold tracking-tight text-white transition-all"
+              icon={
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
                   </svg>
@@ -63,8 +54,8 @@ const Hero: React.FC = () => {
                 href="/cv.pdf"
                 external
                 variant="secondary"
-                size="lg"
-                className="rounded-full border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-md px-8"
+                // Border dibuat lebih tipis, background lebih transparan
+                className="rounded-full border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-md px-6 py-2.5 text-sm font-bold tracking-tight text-white transition-all"
               >
                 Download CV
               </Button>
@@ -80,7 +71,7 @@ const Hero: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                 </a>
               </div>
-              <div className="h-4 w-px bg-white/10"></div>
+              <div className="h-4 w-[1px] bg-white/10"></div>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
                 {personalInfo.location}
               </span>
