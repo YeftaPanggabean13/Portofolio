@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Subtle background glow */}
-      <div className="absolute -z-10 top-1/3 right-0 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+      <div className="absolute -z-10 top-1/3 right-0 w-100 h-100 bg-blue-500/10 blur-[120px] rounded-full"></div>
     </section>
   );
 };
