@@ -1,13 +1,14 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
 import Button from '../components/Button';
+import LightRays from '@/components/LightRays';
+
 
 const Hero: React.FC = () => {
   return (
     <section className="min-h-screen flex items-center pt-24 px-6 relative">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-
           {/* PHOTO */}
           <div className="flex justify-center md:justify-end">
             <div className="relative">
