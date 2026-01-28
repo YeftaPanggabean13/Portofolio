@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import { FloatingNav } from "@/components/floating-navbar";
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
@@ -33,7 +34,6 @@ const App: React.FC = () => {
       
       <div className="bg-glow relative z-10">
         <Navbar />
-        
         <main>
           {/* Section Wrapper untuk Hero dan LightRays */}
           <section className="relative w-full overflow-hidden">
