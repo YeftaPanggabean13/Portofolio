@@ -4,8 +4,9 @@ import { experiences } from '../data/portfolioData';
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 px-6 bg-slate-900/50">
-      <div className="max-w-6xl mx-auto">
+       <section id="experience" className="py-24 px-6 overflow-hidden bg-slate-950">
+      <div className="max-w-6xl mx-auto space-y-24">
+        
         <SectionTitle 
           title="Work Experience" 
           subtitle="My professional journey and industry contributions."

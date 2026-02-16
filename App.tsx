@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import { FloatingNav } from "@/components/floating-navbar";
 import Hero from './sections/Hero';
@@ -9,11 +9,26 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import LightRays from '@/components/LightRays';
+import Preloader from './components/Preloader';
+import { personalInfo } from './data/portfolioData';
 
 const App: React.FC = () => {
+  const [isPreloaderComplete, setIsPreloaderComplete] = useState(false);
+
+  const handlePreloaderComplete = () => {
+    setIsPreloaderComplete(true);
+  };
+
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-slate-950">
-      <style>{`
+    <>
+      <Preloader 
+        onComplete={handlePreloaderComplete}
+        duration={3000}
+        developerName={personalInfo.name.split(' ').slice(0, 2).join(' ')}
+        developerInitials="YF"
+      />
+      <div className="relative min-h-screen overflow-x-hidden bg-slate-950">
+        <style>{`
         .bg-glow::before {
           content: '';
           position: fixed;
@@ -31,46 +46,47 @@ const App: React.FC = () => {
           z-index: 0;
         }
       `}</style>
-      
-      <div className="bg-glow relative z-10">
-        <Navbar />
-        <main>
-          {/* Section Wrapper untuk Hero dan LightRays */}
-          <section className="relative w-full overflow-hidden">
-            <div className="absolute inset-0 z-0 pointer-events-none">
-              <LightRays
-                raysOrigin="top-center"
-                raysColor="#ffffff"
-                raysSpeed={1}
-                lightSpread={0.5}
-                rayLength={3}
-                followMouse={true}
-                mouseInfluence={0.1}
-                noiseAmount={0}
-                distortion={0}
-                className="w-full h-full"
-                pulsating={false}
-                fadeDistance={1}
-                saturation={1}
-              />
-            </div>
-            
-            {/* Hero diletakkan di atas LightRays */}
-            <div className="relative z-10">
-              <Hero />
-            </div>
-          </section>
-
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Contact /> 
-        </main>
         
-        <Footer />
+        <div className="bg-glow relative z-10">
+          <Navbar />
+          <main>
+            {/* Section Wrapper untuk Hero dan LightRays */}
+            <section className="relative w-full overflow-hidden">
+              <div className="absolute inset-0 z-0 pointer-events-none">
+                <LightRays
+                  raysOrigin="top-center"
+                  raysColor="#ffffff"
+                  raysSpeed={1}
+                  lightSpread={0.5}
+                  rayLength={3}
+                  followMouse={true}
+                  mouseInfluence={0.1}
+                  noiseAmount={0}
+                  distortion={0}
+                  className="w-full h-full"
+                  pulsating={false}
+                  fadeDistance={1}
+                  saturation={1}
+                />
+              </div>
+              
+              {/* Hero diletakkan di atas LightRays */}
+              <div className="relative z-10">
+                <Hero />
+              </div>
+            </section>
+
+            <About />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Contact /> 
+          </main>
+          
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

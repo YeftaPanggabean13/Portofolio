@@ -5,8 +5,9 @@ import { personalInfo} from '../data/portfolioData';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 px-6 bg-slate-900/30">
-      <div className="max-w-6xl mx-auto">
+      <section id="contact" className="py-24 px-6 overflow-hidden bg-slate-950">
+      <div className="max-w-6xl mx-auto space-y-24">
+        
         <div className="grid lg:grid-cols-2 gap-16">
           <div>
             <SectionTitle 

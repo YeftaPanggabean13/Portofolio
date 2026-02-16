@@ -5,75 +5,51 @@ import { personalInfo, education } from '../data/portfolioData';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 px-6 bg-slate-900/50">
+    <section id="about" className="py-24 px-6 bg-slate-950">
       <div className="max-w-6xl mx-auto">
         <SectionTitle 
           title="About Me" 
-          subtitle="My journey in tech is driven by curiosity and a relentless desire to build meaningful digital products."
+          subtitle="Building software with clean architecture and user-centric design."
         />
         
-        <div className="grid md:grid-cols-3 gap-12 items-start">
-          <div className="md:col-span-2 space-y-6">
-            <p className="text-lg text-slate-300 leading-relaxed">
+        <div className="grid md:grid-cols-3 gap-8 items-start mt-12">
+          <div className="md:col-span-2 space-y-8">
+            <p className="text-lg text-slate-400 leading-relaxed">
               {personalInfo.summary}
             </p>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              I focus on solving real-world problems through clean architecture and user-friendly interfaces. My experience spans from academic research as a Lecturer's Assistant to enterprise-level software development, giving me a unique perspective on both theory and application.
-            </p>
             
-            <div className="p-6 bg-slate-950/50 border border-slate-800 rounded-xl">
-             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-blue-500"
-              >
-                <path d="M22 10v6" />
-                <path d="M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg>
-              Education
-            </h3>
-
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+            {/* EDUCATION CARD - Standardized */}
+            <div className="p-8 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-slate-700 transition-colors">
+              <h3 className="text-sm uppercase tracking-widest text-blue-400 font-bold mb-6 flex items-center gap-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c3 3 9 3 12 0v-5"/></svg>
+                Education
+              </h3>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
                 <div>
-                  <h4 className="font-semibold text-slate-200">{education.university}</h4>
-                  <p className="text-slate-400">{education.major}</p>
+                  <h4 className="text-xl font-bold text-slate-100">{education.university}</h4>
+                  <p className="text-slate-400 mt-1">{education.major}</p>
                 </div>
-                <div className="text-right">
-                  <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 rounded-lg font-mono text-sm border border-blue-500/20">
-                    GPA: {education.gpa}
-                  </span>
-                </div>
+                <span className="px-4 py-1.5 bg-blue-500/10 text-blue-400 rounded-full font-mono text-sm border border-blue-500/20">
+                  GPA: {education.gpa}
+                </span>
               </div>
             </div>
           </div>
           
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div className="relative bg-slate-950 p-8 rounded-2xl border border-slate-800">
-              <h3 className="text-xl font-bold mb-6">Snapshots</h3>
-              <div className="space-y-6">
-                <div>
-                  <div className="text-3xl font-bold text-blue-500">Enterprise Project</div>
-                  <div className="text-slate-400">PT Sarana Multi Infrastruktur (SMI)</div>
+          {/* SNAPSHOTS CARD - Standardized */}
+          <div className="p-8 bg-slate-900/40 border border-slate-800 rounded-2xl">
+            <h3 className="text-sm uppercase tracking-widest text-slate-500 font-bold mb-8">Snapshots</h3>
+            <div className="space-y-8">
+              {[
+                { label: "Enterprise Project", val: "PT SMI (Persero)" },
+                { label: "Full-Stack Focus", val: "React · Laravel · SQL" },
+                { label: "Methodology", val: "Agile SCRUM" }
+              ].map((item, i) => (
+                <div key={i} className="group">
+                  <div className="text-xs text-slate-500 mb-1 uppercase tracking-tighter">{item.label}</div>
+                  <div className="text-lg font-bold text-slate-200 group-hover:text-blue-400 transition-colors">{item.val}</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-500">Full-Stack Focus</div>
-                  <div className="text-slate-400">React · Laravel · REST APIs</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-500">Agile SCRUM</div>
-                  <div className="text-slate-400">Sprint-based team collaboration</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>  
         </div>
