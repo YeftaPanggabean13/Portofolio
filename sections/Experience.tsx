@@ -4,14 +4,14 @@ import { experiences } from '../data/portfolioData';
 
 const Experience: React.FC = () => {
   return (
-       <section id="experience" className="py-24 px-6 overflow-hidden bg-slate-950">
+    <section id="experience" className="py-24 px-6 overflow-hidden bg-slate-950">
       <div className="max-w-6xl mx-auto space-y-24">
-        
-        <SectionTitle 
-          title="Work Experience" 
+
+        <SectionTitle
+          title="Work Experience"
           subtitle="My professional journey and industry contributions."
         />
-        
+
         <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-800 before:to-transparent">
           {experiences.map((exp, idx) => (
             <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
@@ -21,7 +21,7 @@ const Experience: React.FC = () => {
                   <path d="M12 10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8z" />
                 </svg>
               </div>
-              
+
               {/* Card */}
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-slate-800 bg-slate-950 hover:border-blue-500/30 transition-all shadow-xl">
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-2">

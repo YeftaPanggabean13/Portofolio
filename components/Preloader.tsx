@@ -5,14 +5,15 @@ interface PreloaderProps {
   onComplete?: () => void;
   duration?: number;
   developerName?: string;
-  developerInitials?: string;
+  logoSrc?: string;
 }
 
 const Preloader: React.FC<PreloaderProps> = ({
   onComplete,
   duration = 3000,
   developerName = "Yefta Febrianto",
-  developerInitials = "YF",
+  logoSrc = "src/images/LogoYefta-noBG.png",
+
 }) => {
   const [isComplete, setIsComplete] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -138,18 +139,17 @@ const Preloader: React.FC<PreloaderProps> = ({
               />
 
               {/* Initials Text */}
-              <div className="relative w-28 h-28 rounded-full bg-linear-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-xl">
-                <motion.div
+              <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-xl overflow-hidden">
+                <motion.img
+                  src={logoSrc}
+                  alt="Logo"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-center"
-                >
-                  <span className="text-3xl font-bold text-white tracking-wider">
-                    {developerInitials}
-                  </span>
-                </motion.div>
+                  className="w-20 h-20 object-contain"
+                />
               </div>
+
             </motion.div>
 
             {/* Developer Name */}

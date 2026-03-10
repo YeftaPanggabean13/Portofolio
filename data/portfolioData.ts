@@ -3,7 +3,7 @@ import { Project, Experience, SkillGroup, Achievement } from '../types';
 
 export const personalInfo = {
   name: "Yefta Febrianto Panggabean",
-  image:"src/images/yeftaProfil.png",
+  image: "src/images/yeftaProfil.png",
   role: "Full Stack Developer | Software Developer",
   location: "Bandung, Indonesia",
   email: "panggabeaneta@gmail.com",
@@ -41,6 +41,17 @@ export const skills: SkillGroup[] = [
 export const experiences: Experience[] = [
   {
     role: "Software Developer",
+    company: "DH DigiLab Pte Ltd.",
+    period: "February 2026 - Present",
+    "description": [
+      "Developing scalable web applications using Next.js, React, Laravel, and Convex.",
+      "Designing and implementing responsive kiosk and web interfaces with modern UI practices.",
+      "Optimizing frontend performance and improving application responsiveness.",
+      "Working closely with tech leads and developers to deliver high-quality production features."
+    ]
+  },
+  {
+    role: "Software Developer",
     company: "PT Adidata Informatika",
     period: "May 2025 - August 2025",
     description: [
@@ -68,21 +79,24 @@ export const projects: Project[] = [
     description: "A comprehensive digital guestbook and registration system for campus security and management. Featuring real-time check-ins and an intuitive dashboard.",
     tech: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
     githubUrl: "https://github.com/YeftaPanggabean13/visitor-kiosk-system",
-    image: "src/images/visitorKiosk.png"
+    image: "src/images/visitorKiosk.png",
+    layout: "image"
   },
   {
     title: "YBFT Academy",
     description: "A modern learning space for students who want to build real digital skills — helping you develop faster without unnecessary hassle.",
     tech: ["HTML", "Tailwind CSS", "JavaScript"],
     githubUrl: "https://github.com/YeftaPanggabean13/YBFTAcademy",
-    image: "src/images/YBFTAcademy.png"
+    image: "src/images/YBFTAcademy.png",
+    layout: "image"
   },
   {
     title: "GarageTI Workshop",
     description: "project in the web 2 course, developing a car repair system.",
-    tech: ["Laravel", "Vue.JS", "Bootstrap", "MySQL","CSS"],
+    tech: ["Laravel", "Vue.JS", "Bootstrap", "MySQL", "CSS"],
     githubUrl: "https://github.com/YeftaPanggabean13/GarageTI",
-    image: "src/images/garageti.png"
+    image: "src/images/garageti.png",
+    layout: "logo"
   }
 ];
 

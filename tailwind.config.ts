@@ -14,6 +14,9 @@ export default {
           950: '#020617',
         },
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       backdropBlur: {
         'md': '12px',
       },

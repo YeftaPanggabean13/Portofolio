@@ -1,84 +1,86 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
-import Button from '../components/Button';
+import { cn } from '@/lib/utils'; // Assuming this exists or will be created. I'll create it if not.
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center pt-32 pb-16 px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto w-full z-10">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-          
-          {/* PHOTO */}
-          <div className="flex justify-center md:order-last">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-blue-500/10 rounded-[2.5rem] blur-2xl group-hover:bg-blue-500/20 transition-all duration-500"></div>
-              
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/50 backdrop-blur-sm p-3">
-                <img
-                  src={personalInfo.image}
-                  alt={personalInfo.name}
-                  className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-[1.5rem] grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-            </div>
-          </div>
+    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-20 overflow-hidden font-poppins">
 
-          {/* CONTENT */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            {/* Typography Update: Text Gradient & Tight Tracking */}
-            <div className="mb-8">
-              <h1 className="text-4xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.05] text-white">
-                Serious about <span className="text-slate-500">software,</span> <br />
-                Curious about <span className="bg-gradient-to-br from-blue-400 to-indigo-500 bg-clip-text text-transparent">everything.</span>
-              </h1>
-            </div>
-            
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
-              <Button
-                asLink
-                href="#projects"
-                // Ukuran dikecilkan, font dibuat lebih bold & rapat
-              className="rounded-full border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-md px-6 py-2.5 text-sm font-bold tracking-tight text-white transition-all"
-              icon={
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                }
-              >
-                View Work
-              </Button>
+      {/* Background Ambience (Optional extra glow) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none" />
 
-              <Button 
-                asLink
-                href="/cv.pdf"
-                external
-                variant="secondary"
-                // Border dibuat lebih tipis, background lebih transparan
-                className="rounded-full border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-md px-6 py-2.5 text-sm font-bold tracking-tight text-white transition-all"
-              >
-                Download CV
-              </Button>
-            </div>
+      <div className="max-w-5xl mx-auto w-full z-10 text-center flex flex-col items-center">
 
-            {/* Socials & Location */}
-            <div className="flex items-center gap-6 mt-12 pt-8 border-t border-white/5 w-full justify-center md:justify-start text-slate-500">
-              <div className="flex gap-5">
-                <a href="https://github.com/YeftaPanggabean13/h" target="_blank" className="hover:text-white transition-all transform hover:-translate-y-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-                </a>
-                <a href={`mailto:${personalInfo.email}`} className="hover:text-white transition-all transform hover:-translate-y-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                </a>
-              </div>
-              <div className="h-4 w-[1px] bg-white/10"></div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
-                {personalInfo.location}
-              </span>
-            </div>
-
-          </div>
+        {/* Main Headline */}
+        <div className="mb-6 relative">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl md:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-2"
+          >
+            Serious about <span className="text-slate-500">software,</span>
+          </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-400 leading-[1.1]"
+          >
+            Curious about everything.
+          </motion.h1>
         </div>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="text-slate-400 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed text-balance"
+        >
+          Full Stack Developer delivering robust client solutions with <span className="text-white font-medium">Next.js</span>, <span className="text-white font-medium">React</span>, and <span className="text-white font-medium">Laravel</span>. Focused on clean architecture and high-performance interfaces.
+        </motion.p>
+
+        {/* Actions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex flex-wrap justify-center gap-6"
+        >
+          <a
+            href="#projects"
+            className="group relative inline-flex h-12 items-center justify-center bg-white px-8 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-slate-200"
+          >
+            <span className="mr-2">View Work</span>
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            className="group inline-flex h-12 items-center justify-center bg-transparent px-8 text-sm font-semibold text-white transition-all duration-300 border border-slate-700 hover:border-white hover:bg-white/5"
+          >
+            Download CV
+          </a>
+        </motion.div>
+
+        {/* Socials / Tech Stack Hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="mt-20 pt-10 border-t border-white/5 w-full max-w-2xl flex justify-between items-center text-slate-500 text-sm"
+        >
+          <span>{personalInfo.location}</span>
+          <div className="flex gap-6">
+            <a href="https://github.com/YeftaPanggabean13" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href={personalInfo.instagram} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
+            <a href={`mailto:${personalInfo.email}`} className="hover:text-white transition-colors">Email</a>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

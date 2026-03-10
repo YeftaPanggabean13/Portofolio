@@ -6,6 +6,8 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   image: string;
+  logo?: string;
+  layout: 'logo' | 'image';
 }
 
 export interface Experience {
